@@ -13,17 +13,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <ul className="flex justify-center space-x-4">
             <li>
               <Link href="/">
-                Home
+                home
               </Link>
             </li>
             <li>
               <Link href="/about">
-                About
+                about
               </Link>
             </li>
             <li>
               <Link href="/contact">
-                Contact
+                contact
               </Link>
             </li>
           </ul>
