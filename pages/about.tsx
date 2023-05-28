@@ -3,37 +3,38 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Box } from '@react-three/drei';
 import Layout from '../components/layout';
 
-const Cubes = ({ number }) => {
+const Cube = ({ index }) => {
     const speed = 0.1;
+    const ref = useRef();
 
-    const cubes = [...Array(number)].map((_, i) => {
-        const ref = useRef();
-
-        useFrame(() => {
-            if (ref.current) {
-                if (ref.current.position.y > -20) {
-                    ref.current.position.y -= speed;
-                } else {
-                    ref.current.position.y = 20 + Math.random() * 5;
-                    ref.current.position.x = -5 + Math.random() * 10;
-                    ref.current.position.z = -5 + Math.random() * 10;
-                    ref.current.material.color.setRGB(Math.random(), Math.random(), Math.random());
-                }
+    useFrame(() => {
+        if (ref.current) {
+            if (ref.current.position.y > -20) {
+                ref.current.position.y -= speed;
+            } else {
+                ref.current.position.y = 20 + Math.random() * 5;
+                ref.current.position.x = -5 + Math.random() * 10;
+                ref.current.position.z = -5 + Math.random() * 10;
+                ref.current.material.color.setRGB(Math.random(), Math.random(), Math.random());
             }
-        });
-
-        return (
-            <Box
-                key={i}
-                castShadow
-                receiveShadow
-                position={[-5 + Math.random() * 10, 20 + i, -5 + Math.random() * 10]}
-                ref={ref}
-            >
-                <meshStandardMaterial attach="material" />
-            </Box>
-        );
+        }
     });
+
+    return (
+        <Box
+            key={index}
+            castShadow
+            receiveShadow
+            position={[-5 + Math.random() * 10, 20 + index, -5 + Math.random() * 10]}
+            ref={ref}
+        >
+            <meshStandardMaterial attach="material" />
+        </Box>
+    );
+};
+
+const Cubes = ({ number }) => {
+    const cubes = [...Array(number)].map((_, i) => <Cube index={i} key={i} />);
 
     return <>{cubes}</>;
 };
