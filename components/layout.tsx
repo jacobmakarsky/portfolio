@@ -33,10 +33,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main className="bg-gray-200 flex-1 flex items-center justify-center overflow-hidden">
         {children}
       </main>
-
-      <footer className="py-4 bg-gray-200 text-center absolute bottom-0 left-0 w-full text-sm">
-        © {new Date().getFullYear()}, Jacob Makarsky
-      </footer>
     </div>
   );
 };

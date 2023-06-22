@@ -4,6 +4,13 @@ import Layout from '@/components/layout';
 import { Cat } from '@/components/Cat';
 import Head from 'next/head'
 
+// This could be a simple loading spinner or any other component you want
+const Loader = () => (
+  <div>
+    <p>Loading...</p>
+  </div>
+);
+
 export default function Landing() {
   return (
     <>
@@ -13,7 +20,7 @@ export default function Landing() {
       </Head>
 
       <Layout>
-        <Suspense fallback={<span>loading...</span>}>
+        <Suspense fallback={<Loader />}>
           <Canvas shadows={true}>
             <directionalLight position={[0, 10, 10]} intensity={1} castShadow />
 

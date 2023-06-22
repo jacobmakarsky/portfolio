@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 import palette from 'nice-color-palettes';
 import THREE from 'three';
 import Head from 'next/head';
+import Image from 'next/image';
 
 type CubeProps = {
     index: number;
@@ -83,10 +84,20 @@ export default function About() {
                             </div>
                             <div className="col-span-2 md:col-span-1 text-left">
                                 <h1 className="text-3xl md:text-6xl font-bold tracking-wider mb-4">jacob makarsky</h1>
-                                <h2 className="text-2xl md:text-4xl font-bold text-gray-500 mb-8">info science</h2>
+                                <h2 className="text-2xl md:text-4xl font-bold text-gray-500 mb-8">dev</h2>
                                 <p className="text-sm md:text-lg mb-2">creates things through software development</p>
                                 <p className="text-sm md:text-lg mb-2">focuses on blockchain and disruptive technology</p>
                                 <p className="text-sm md:text-lg mb-8">我会说一点中文 | Я учу русский</p>
+
+                                <div className="flex flex-row space-x-4">
+                                    <a href="https://www.psu.edu/news/academics/story/scholarships-help-aspiring-ist-entrepreneurs-pursue-degrees-business-ventures/">
+                                        <Image src="/steelers.png" alt="Pittsburgh Steelers" width={100} height={60} className="rounded-full" />
+                                    </a>
+
+                                    <a href="https://www.psu.edu/news/academics/story/forbes-under-30-summit-memorable-extraordinary-experience/">
+                                        <Image src="/pennState.png" alt="Penn State" width={180} height={60} className="rounded-full" />
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </main>

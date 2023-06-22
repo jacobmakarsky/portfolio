@@ -11,9 +11,23 @@ export default function Contact() {
             </Head>
 
             <Layout>
-                <main className="flex min-h-screen flex-col items-center justify-center p-24">
+                <main className="flex min-h-screen flex-col items-center justify-center p-24 space-y-2">
                     <div className="flex flex-col items-center justify-center text-center">
-                        <h1 className="text-1xl md:text-2xl mb-4" style={{ letterSpacing: "0.2rem" }}>jacobmakarsky@gmail.com</h1>
+                        <a href="mailto: jacobmakarsky@gmail.com" className="text-gray-600 hover:text-gray-800 text-1xl md:text-2xl mb-4" style={{ letterSpacing: "0.2rem" }}>jacobmakarsky@gmail.com</a>
+                    </div>
+
+                    <div className="flex flex-col items-center justify-center text-center space-y-4">
+                        <a href="https://twitter.com/jamaka_eth" className="text-gray-600 hover:text-gray-800" style={{ letterSpacing: "0.1rem" }}>
+                            twitter
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/jacobmakarsky/" className="text-gray-600 hover:text-gray-800" style={{ letterSpacing: "0.1rem" }}>
+                            linkedIn
+                        </a>
+
+                        <a href="https://github.com/jacobmakarsky" className="text-gray-600 hover:text-gray-800" style={{ letterSpacing: "0.1rem" }}>
+                            github
+                        </a>
                     </div>
                 </main>
             </Layout>
